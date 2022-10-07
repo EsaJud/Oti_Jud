@@ -1,75 +1,118 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <title>Document</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+     
+    <title>MOMBASA</title>
 </head>
-
-
-<a href="#" style="margin-left: 40% ; text-decoration: none; font-size: 28px; color: rgb(235, 8, 76);">NAIROBI WEB MAP </a>
 <body>
-    <section>
-<div id="map" style="width:90%; height:380px;"></div>
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-        <script>
-            // map options
-            var mapOptions = {
-             center:[-1.286389, 36.817223],
-             zoom:10
-            }
-            //create map object
-            var map = new L.map('map', mapOptions)
-            //layer obj
-            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
-         
-            //add layer
-            map.addLayer(layer);
-         
-         
-         </script>
-    </section>
-
-    <section class="footer">
-    
-        <style>
-        .footer{
+    <h1 class="title-row"><u>WEB MAP</u></h1>
+    <h3 style="color:lawngreen">FIRST WEB PAGE</h3>
+    <div id = "map" style = "width:100%; height:450px;"></div>
+    <style> .title-row:hover{
+        color: lawngreen;
+    }
+        .title-row {
+            color: lawngreen;
+            text-align: center;
+        }
+        html, body {
+            height: 100%;
+            padding:0;
+            margin: 0;
+        }
+        #map {
+            /* configure the size of the map*/
+            padding: 0px;
+            margin: 15px;
+            height: 85%;
+        }
+    </style>
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script>
+        // Creating the basemap options
+        var mapOptions = {
+           
+           center: [0.5143,35.2698],
+           zoom: 10
+        }
+        
+        // Creating a map object
+        var map = new L.map('map', mapOptions);
+        
+        // Creating a Layer object
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        
+        // Adding layer to the map
+        map.addLayer(layer);
+        var marker = L.marker([0.5143,35.2698]) .addTo(map);
+        //Showing a maker on the map
+        marker.bindPopup("<b>Tropical Hotel</b><br>Enjoy the flavors") .openPopup();
+        function onMapClick(e){
+            alert("You clicked map at" +e.latlng);
+        }
+        map.on('clicck', onMapClick);
+          
+     </script>  
+</body>
+<footer class="site footer">
+    <div class="contains">
+        <div class="col-sm-12 col-md-6">
             
-            background-color: rgb(219, 49, 7);
-            min-height: 30vh;
-    
-
-        }
-       
-        </style>
-        
-        <div class="footer_section">
-       <style>
-        .footer_section{
-            display: flex;
-            flex-direction: row;
-            row-gap: 2rem;
-            color: rgb(238, 12, 200);
-            list-style: none;
-            margin-top: 1.8rem;
-        }
-       </style>
-       <li class="contributers">Created By:
-        <ul style="color: rgb(6, 202, 186);">Esther Judith Otieno</ul>
-        
-       </li>
-       <li  style="margin-left: 40% ;" class="authers">Reg No.
-        <ul style="color: rgb(0, 255, 242);">ENC222-0155/2019</ul>
-    </li>
-       <li  style="margin-left: 30% ;" class="marginal information">Course
-        <ul style="color: rgb(0, 204, 255);">G.I.S</ul>
-    </li>
+        <div class="col-6 col-md-3">
+            <h5 style="color:lawngreen">Author</h5>
+            <ul class="footer-author">
+            <li>Esther Judith Otieno</li>
+            <li>ENC222-0155/2019</li>
+        </ul>
+        </div>
+        <div class="col-6 ccol-md-3">
+            <h5 style="color:lawngreen">Contributor</h5>
+            <ul class="footer-author">
+                <li><a href="a">Web Developer</a></li>
+                <li><a href="a">Esther Judith</a></li>
+            </ul>
+        </div>
+        <h5 style="color:lawngreen">About</h5>
+            <p class="text-justify">OpenstreetMap is Freely available in the internet.It is also editable by those who have signed up into the Openstreet 
+                account,such as the Youth Mappers.Anyone can be a part of this amaizing team of mappers. Sign up now https://www.openstreetmap.org/user/new </p>
         </div>
     </div>
-    
-</section>
-
-</body>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing:border-box;
+        }
+        body{
+            font-family: 'poppins', sans-serif;
+            min-height: 100vh;
+            display:block;
+            align-items:center;
+            justify-content:center;
+        }
+        .site-footer {
+            background-color: #2b262b80;
+            padding:45px 0 20px ;
+            font-size: 15px;
+            line-height: 24px;
+            color: dimgray;
+            box-shadow: 0 10px 20px,rgba(0, 0, 0, 0.5);
+        }
+        .site-footer hr {
+            border-top-color: rgba(187, 187, 187, 0.219);
+            opacity:0.5;
+        }
+        .site-footer hr.small{
+            margin: 20px 0;
+        }
+        .footer{background-color:grey;
+        padding: 70px 0;
+    }
+    </style>
+</footer>
 </html>
