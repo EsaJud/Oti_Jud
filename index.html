@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-     
-    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src = "https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" rel="stylesheet" />
+    <!-- <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> -->
     <title>MOMBASA</title>
 </head>
 <body>
@@ -55,7 +56,7 @@
         function onMapClick(e){
             alert("You clicked map at" +e.latlng);
         }
-        map.on('clicck', onMapClick);
+        map.on('click', onMapClick);
           
      </script>  
 </body>
